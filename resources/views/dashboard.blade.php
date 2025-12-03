@@ -12,6 +12,21 @@
     @endsession
 
     <div>
+      <div>
+        @forelse($habits as $habit)
+          <x-contribution :habit="$habit" />
+        @empty
+          <div>
+            <p class="text-black">
+              Nenhum hábito para exibir histórico.
+            </p>
+            <a href="{{ route('habits.create') }}" class="underline ">
+              Crie um novo hábito
+            </a>
+          </div>
+        @endforelse
+      </div>
+
       <h2 class="text-lg mt-8 mb-2">
         {{ date('d/m/Y') }}
       </h2>
