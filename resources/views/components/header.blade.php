@@ -1,40 +1,43 @@
-<header class="bg-white border-b-2 flex items-center justify-between p-4">
-  {{-- LOGO --}}
-  <div class="flex items-center gap-2 font-bold">
-    <a href="{{ route('habits.index') }}" class="habit-btn habit-shadow-lg px-2 py-1 bg-habit-orange">
-      HT
-    </a>
-    <p>
-      Habit Tracker
-    </p>
-  </div>
+<header class="bg-white border-b-2">
+  <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
 
-  {{-- GITHUB --}}
-  <div>
-    @auth
-      <form
-        class="inline"
-        action="{{ route('auth.logout') }}"
-        method="POST"
-      >
-        @csrf
+    {{-- LOGO --}}
+    <div class="flex items-center gap-2 font-bold">
+      <a href="{{ route('habits.index') }}" class="habit-btn habit-shadow-lg px-2 py-1 bg-habit-orange">
+        HT
+      </a>
+      <p>
+        Habit Tracker
+      </p>
+    </div>
 
-        <button type="submit" class="habit-shadow-lg habit-btn p-2 border-2">
-          Sair
-        </button>
-      </form>
-    @endauth
+    {{-- GITHUB --}}
+    <div>
+      @auth
+        <form
+          class="inline"
+          action="{{ route('auth.logout') }}"
+          method="POST"
+        >
+          @csrf
 
-    @guest
-      <div class="flex gap-2">
-        <a href="{{ route('site.register') }}" class="p-2 habit-shadow-lg habit-btn">
-          Cadastrar
-        </a>
+          <button type="submit" class="habit-shadow-lg habit-btn p-2 border-2">
+            Sair
+          </button>
+        </form>
+      @endauth
 
-        <a href="{{ route('site.login') }}" class="p-2 habit-shadow-lg bg-habit-orange habit-btn">
-          Logar
-        </a>
-      </div>
-    @endguest
+      @guest
+        <div class="flex gap-2">
+          <a href="{{ route('site.register') }}" class="p-2 habit-shadow-lg habit-btn">
+            Cadastrar
+          </a>
+
+          <a href="{{ route('site.login') }}" class="p-2 habit-shadow-lg bg-habit-orange habit-btn">
+            Logar
+          </a>
+        </div>
+      @endguest
+    </div>
   </div>
 </header>
