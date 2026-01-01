@@ -104,7 +104,7 @@ class HabitController extends Controller
         if($log){
             $log->delete();
             $alert = 'warning';
-            $message = 'Hábito desmarcado.';
+            $message = 'Hábito desmarcado';
         } else {
             HabitLog::query()
                 ->create([
