@@ -13,6 +13,12 @@
     --color-habit-orange: #FB6334;
 }
 
+.habit-bg {
+  background-size: 70px 70px;
+  background-image: linear-gradient(90deg, #80808033 1px, #0000 0), linear-gradient(#80808033 1px, #0000 0);
+  background-color: #FFEDD6;
+}
+
 .habit-btn {
   font-weight: 700;
   cursor: pointer;

@@ -14,7 +14,7 @@
     @vite('resources/css/app.css')
   </head>
 
-  <body class="bg-[#FFEDD6] font-mono relative">
+  <body class="font-mono relative habit-bg min-h-screen flex flex-col justify-between">
     {{-- HEADER --}}
     <x-header />
 
