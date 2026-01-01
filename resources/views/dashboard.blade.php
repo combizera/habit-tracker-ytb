@@ -9,7 +9,6 @@
         {{ \Carbon\Carbon::now()->locale('pt_BR')->translatedFormat('l, d \d\e F') }}
       </x-title>
 
-
       <ul class="flex flex-col gap-2 w-full">
         @forelse($habits as $item)
           <li class="habit-shadow-lg p-2 bg-[#FFDAAC]">
