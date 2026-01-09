@@ -2,7 +2,10 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\ValidationRule;
+use Illuminate\Database\Query\Builder;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class HabitRequest extends FormRequest
 {
@@ -17,12 +20,19 @@ class HabitRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     * @return array<string, ValidationRule|array|string>
      */
     public function rules(): array
     {
         return [
-            'name' => 'required|max:255|string',
+            'name' => [
+                'required',
+                'max:255',
+                'string',
+                Rule::unique('habits')
+                    ->where(fn (Builder $query) => $query->where('user_id', $this->user()->id))
+                    ->ignore($this->route('habit')->id),
+            ],
         ];
     }
 
@@ -32,6 +42,7 @@ class HabitRequest extends FormRequest
             'name.required' => 'O campo é obrigatorio',
             'name.max' => 'Deve ter no máximo 255 caracteres',
             'name.string' => 'Deve ser texto',
+            'name.unique' => 'Você já possui um hábito com esse nome',
         ];
     }
 }
