@@ -29,11 +29,11 @@
 
       @guest
         <div class="flex gap-2">
-          <a href="{{ route('site.register') }}" class="p-2 habit-shadow-lg habit-btn">
+          <a href="{{ route('register') }}" class="p-2 habit-shadow-lg habit-btn">
             Cadastrar
           </a>
 
-          <a href="{{ route('site.login') }}" class="p-2 habit-shadow-lg bg-habit-orange habit-btn">
+          <a href="{{ route('login') }}" class="p-2 habit-shadow-lg bg-habit-orange habit-btn">
             Logar
           </a>
         </div>

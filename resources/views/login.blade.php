@@ -63,7 +63,7 @@
 
        <p class="text-center mt-4">
          Ainda não tem uma conta?
-          <a href="{{ route('site.register') }}" class="underline hover:opacity-50 transition">
+          <a href="{{ route('register') }}" class="underline hover:opacity-50 transition">
             Registre-se
           </a>
        </p>
