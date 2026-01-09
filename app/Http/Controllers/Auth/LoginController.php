@@ -18,8 +18,9 @@ class LoginController extends Controller
     public function authenticate(LoginRequest $request)
     {
         $credentials = $request->only('email', 'password');
+        $remember = $request->has('remember');
 
-        if(Auth::attempt($credentials)) {
+        if(Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
 
             return redirect()->intended(route('habits.index'));
@@ -27,7 +28,7 @@ class LoginController extends Controller
 
         return back()->withErrors([
             'email' => 'Credenciais Inválidas',
-        ]);
+        ])->withInput($request->only('email', 'remember'));
     }
 
     public function logout(Request $request): RedirectResponse
