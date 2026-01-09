@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\HabitRequest;
+use App\Http\Requests\UpdateHabitRequest;
 use App\Models\Habit;
 use App\Models\HabitLog;
 use Carbon\Carbon;
@@ -58,7 +59,7 @@ class HabitController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(HabitRequest $request, Habit $habit)
+    public function update(UpdateHabitRequest $request, Habit $habit)
     {
         $this->authorize('update', $habit);
 
