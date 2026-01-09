@@ -6,10 +6,14 @@
         Veja seus hábitos ganharem vida
       </h1>
       <p class="text-center text-lg">
-        Construa a versão que você quer ser, <span class="underline"> um dia de cada vez.</span> Acompanhe, visualize e celebre cada pequena vitória.
+        Construa a versão que você quer ser, <span class="bg-habit-orange p-0.5 text-white"> um dia de cada vez</span>.
+        Acompanhe, visualize e celebre cada pequena vitória.
       </p>
 
-      <a href="#" class="habit-shadow-lg habit-btn bg-habit-orange p-2 text-center">
+      <a
+        href="{{ auth()->check() ? route('habits.index') : route('register') }}"
+        class="habit-shadow-lg habit-btn bg-habit-orange p-2 text-center"
+      >
         Começar Agora
       </a>
     </section>
