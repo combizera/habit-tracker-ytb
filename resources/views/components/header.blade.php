@@ -5,13 +5,15 @@
     <div class="flex items-center gap-2 font-bold">
       <a
         href="{{ auth()->check() ? route('habits.index') : route('index') }}"
-        class="habit-btn habit-shadow-lg px-2 py-1 bg-habit-orange"
+        class="flex items-center gap-3"
       >
-        HT
+        <div class="habit-btn habit-shadow-lg px-2 py-1 bg-habit-orange">
+          HT
+        </div>
+        <p class="select-none">
+          Habit Tracker
+        </p>
       </a>
-      <p>
-        Habit Tracker
-      </p>
     </div>
 
     {{-- NAV --}}
