@@ -28,6 +28,8 @@ return [
 
     'env' => env('APP_ENV', 'production'),
 
+    'repository' => 'https://github.com/combizera/habit-tracker-ytb',
+
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode

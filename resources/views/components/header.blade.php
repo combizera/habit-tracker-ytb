@@ -45,7 +45,12 @@
       @endguest
 
       {{-- GITHUB --}}
-      <a class="habit-btn habit-shadow-lg p-[5px]" href="https://github.com/combizera/habit-tracker-ytb">
+      <a
+        class="habit-btn habit-shadow-lg p-[5px]"
+        href="{{ config('app.repository') }}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <x-icons.github />
       </a>
     </div>
