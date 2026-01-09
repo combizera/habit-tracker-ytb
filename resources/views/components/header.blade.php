@@ -21,7 +21,7 @@
         >
           @csrf
 
-          <button type="submit" class="habit-shadow-lg habit-btn p-2 border-2">
+          <button type="submit" class="habit-shadow-lg habit-btn p-1 px-2 border-2">
             Sair
           </button>
         </form>
@@ -29,18 +29,18 @@
 
       @guest
         <div class="flex gap-2">
-          <a href="{{ route('register') }}" class="p-1 habit-shadow-lg habit-btn">
+          <a href="{{ route('register') }}" class="p-1 px-2 habit-shadow-lg habit-btn">
             Cadastrar
           </a>
 
-          <a href="{{ route('login') }}" class="p-1 habit-shadow-lg bg-habit-orange habit-btn">
+          <a href="{{ route('login') }}" class="p-1 px-2 habit-shadow-lg bg-habit-orange habit-btn">
             Logar
           </a>
         </div>
       @endguest
 
       {{-- GITHUB --}}
-      <a class="habit-btn habit-shadow-lg p-1" href="https://github.com/combizera/habit-tracker-ytb">
+      <a class="habit-btn habit-shadow-lg p-[5px]" href="https://github.com/combizera/habit-tracker-ytb">
         <x-icons.github />
       </a>
     </div>
