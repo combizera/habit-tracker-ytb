@@ -9,8 +9,10 @@
       Ygor Combi.</a>
     O código fonte está no
     <a
-      href="https://github.com/combizera/habit-tracker-ytb"
       class="font-bold underline hover:text-habit-orange"
+      href="{{ config('app.repository') }}"
+      target="_blank"
+      rel="noopener noreferrer"
     >
       GitHub.
     </a>

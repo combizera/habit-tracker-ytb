@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@plugin "@tailwindcss/forms";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -57,4 +58,29 @@
   span {
     transform: rotate(45deg);
   }
+}
+
+button[type=submit] {
+  @apply outline-none focus:ring-habit-orange focus:ring-2;
+}
+
+input {
+  @apply ring-2 ring-transparent transition-all bg-white p-2 border-2 border-black;
+}
+
+input:focus-visible {
+  @apply outline-none border-habit-orange ring-habit-orange;
+}
+
+input:required + label::after {
+  content: "*";
+  @apply text-red-500 -ml-1;
+}
+
+input[type=checkbox] {
+  @apply border-2 border-black text-habit-orange form-checkbox;
+}
+
+input[type=checkbox]:focus {
+  @apply outline-none ring-habit-orange;
 }
