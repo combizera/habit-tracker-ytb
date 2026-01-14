@@ -1,4 +1,7 @@
-<x-layout>
+<x-layout
+  title="Acompanhe seus hábitos"
+  resume="Acompanhe, visualize, gerencie e celebre cada pequena vitória na construção dos seus hábitos diários."
+>
   {{-- HERO --}}
   <main class="py-10">
     <section class="mx-auto px-4 flex flex-col items-center gap-4 max-w-[650px] mb-80 mt-50">

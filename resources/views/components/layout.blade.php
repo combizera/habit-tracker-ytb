@@ -9,9 +9,6 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-      {{ config('app.name') }}
-    </title>
 
     {{-- SEO [Title/Description/Favicon/Canonical] --}}
     <x-seo :$title :$resume />
