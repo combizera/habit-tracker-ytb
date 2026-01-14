@@ -1,16 +1,10 @@
 <x-layout>
-  <main class="py-10">
-    <section class="bg-white max-w-[600px] mx-auto px-10 py-6 space-y-6 border-2 habit-shadow-lg">
-      <div class="flex flex-col gap-2">
-        <h1 class="font-bold text-3xl">
-          Faça Login
-        </h1>
-
-        <p>
-          Insira seus dados para acessar
-        </p>
-      </div>
-
+  <main class="py-10 px-4">
+    {{-- CARD --}}
+    <x-card
+      title="Login"
+      resume="Entre na sua conta para gerenciar seus hábitos"
+    >
       <form action="{{ route('login') }}" method="POST" class="flex flex-col gap-4">
         @csrf
 
@@ -27,9 +21,9 @@
             Email
           </label>
           @error('email')
-            <p class="text-red-500 text-sm">
-              {{ $message }}
-            </p>
+          <p class="text-red-500 text-sm">
+            {{ $message }}
+          </p>
           @enderror
         </div>
 
@@ -45,9 +39,9 @@
             Senha
           </label>
           @error('password')
-            <p class="text-red-500 text-sm">
-              {{ $message }}
-            </p>
+          <p class="text-red-500 text-sm">
+            {{ $message }}
+          </p>
           @enderror
         </div>
 
@@ -73,12 +67,12 @@
         </button>
       </form>
 
-       <p class="text-center">
-         Ainda não tem uma conta?
-          <a href="{{ route('register') }}" class="hover:underline hover:opacity-80 transition text-habit-orange">
-            Registre-se
-          </a>
-       </p>
-    </section>
+      <p class="text-center">
+        Ainda não tem uma conta?
+        <a href="{{ route('register') }}" class="hover:underline hover:opacity-80 transition text-habit-orange">
+          Registre-se
+        </a>
+      </p>
+    </x-card>
   </main>
 </x-layout>

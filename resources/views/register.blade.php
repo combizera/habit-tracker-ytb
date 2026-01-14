@@ -1,16 +1,10 @@
 <x-layout>
-  <main class="py-10">
-    <section class="bg-white max-w-[600px] mx-auto px-10 py-6 space-y-6 border-2 habit-shadow-lg">
-      <div class="flex flex-col gap-2">
-        <h1 class="font-bold text-3xl">
-          Registre-se
-        </h1>
-
-        <p>
-          Preencha as informações para começar a organizar os seus hábitos
-        </p>
-      </div>
-
+  <main class="py-10 px-4">
+    {{-- CARD --}}
+    <x-card
+      title="Registre-se"
+      resume="Crie sua conta para começar a organizar seus hábitos"
+    >
       <form action="{{ route('auth.register') }}" method="POST" class="flex flex-col gap-4">
         @csrf
         <div class="flex flex-col-reverse gap-2">
@@ -99,6 +93,6 @@
           Faça login
         </a>
       </p>
-    </section>
+    </x-card>
   </main>
 </x-layout>

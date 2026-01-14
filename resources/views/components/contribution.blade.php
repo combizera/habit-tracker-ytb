@@ -13,7 +13,7 @@
   </h2>
 
   {{-- GRID --}}
-  <div class="bg-orange-50 p-2 habit-shadow-lg">
+  <div class="bg-orange-50 p-2 habit-shadow-lg overflow-x-auto">
     <div class="flex gap-1 justify-between w-full">
 
       @foreach($weeks as $week)

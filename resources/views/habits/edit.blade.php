@@ -1,10 +1,10 @@
 <x-layout>
-  <main class="max-w-5xl mx-auto py-10 px-4 min-h-[80vh] w-full space-y-4">
-    <h1 class="font-bold text-2xl text-center">
-      Editar Hábito
-    </h1>
-
-    <section class="bg-white max-w-[600px] mx-auto px-10 py-6 space-y-6 border-2 habit-shadow-lg">
+  <main class="py-10 px-4">
+    {{-- CARD --}}
+    <x-card
+      title="Editar Hábito"
+      resume="Altere o nome do seu hábito abaixo."
+    >
       <form action="{{ route('habits.update', $habit->id) }}" method="POST" class="flex flex-col gap-4">
         @csrf
         @method('PUT')
@@ -22,9 +22,9 @@
             Nome do Hábito
           </label>
           @error('name')
-            <p class="text-red-500 text-sm">
-              {{ $message }}
-            </p>
+          <p class="text-red-500 text-sm">
+            {{ $message }}
+          </p>
           @enderror
         </div>
 
@@ -35,6 +35,6 @@
           Editar hábito
         </button>
       </form>
-    </section>
+    </x-card>
   </main>
 </x-layout>
