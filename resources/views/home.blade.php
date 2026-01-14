@@ -4,8 +4,8 @@
 >
   <main class="py-10">
     {{-- HERO --}}
-    <section class="mx-auto px-4 flex flex-col items-center gap-4 max-w-[650px] mb-80 mt-50">
-      <h1 class="text-[50px] leading-[1.2] text-center font-bold">
+    <section class="mx-auto px-4 flex flex-col items-center gap-4 max-w-[650px] mb-40 mt-30 md:mb-80 md:mt-50">
+      <h1 class="text-4xl md:text-[50px] leading-[1.2] text-center font-bold">
         Veja seus hábitos ganharem vida
       </h1>
       <p class="text-center text-lg">
@@ -36,12 +36,12 @@
     </section>
 
     {{-- FAQ --}}
-    <section class="faq max-w-5xl mx-auto flex flex-col gap-8 py-40">
-      <h2 class="text-3xl font-bold text-center">
+    <section class="faq max-w-5xl mx-auto flex flex-col gap-8 pt-40 pb-20 px-4">
+      <h2 class="text-4xl font-bold text-center">
         Perguntas Frequentes
       </h2>
 
-      <article class="flex flex-col items-center gap-4">
+      <article class="flex flex-col items-center gap-4 max-w-xl mx-auto">
         <x-question question="Como funciona o registro de hábitos?">
           Você cria seus hábitos personalizados e marca diariamente quando os completa. O sistema registra tudo automaticamente e te mostra seu progresso ao longo do tempo de forma visual e clara.
         </x-question>
