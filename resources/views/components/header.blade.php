@@ -10,7 +10,7 @@
         <div class="habit-btn habit-shadow-lg px-2 py-1 bg-habit-orange">
           HT
         </div>
-        <p class="select-none">
+        <p class="select-none hidden md:inline-block">
           Habit Tracker
         </p>
       </a>

@@ -20,7 +20,10 @@
               </div>
 
               {{-- EDIT --}}
-              <a class="bg-white habit-shadow-lg p-2 hover:opacity-50" href="{{ route('habits.edit', $item->id) }}"}}>
+              <a
+                class="bg-white habit-shadow-lg p-1 md:p-2 hover:opacity-50"
+                href="{{ route('habits.edit', $item->id) }}"
+              >
                 <x-icons.edit />
               </a>
 
@@ -29,7 +32,7 @@
                 @csrf
                 @method('DELETE')
 
-                <button type="submit" class="habit-shadow-lg bg-red-500 text-white p-2 hover:opacity-50 cursor-pointer">
+                <button type="submit" class="habit-shadow-lg bg-red-500 text-white p-1 md:p-2 hover:opacity-50 cursor-pointer">
                   <x-icons.trash />
                 </button>
               </form>

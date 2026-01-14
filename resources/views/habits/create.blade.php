@@ -1,10 +1,10 @@
 <x-layout>
-  <main class="max-w-5xl mx-auto py-10 px-4 min-h-[80vh] w-full">
-    <h1 class="font-bold text-2xl text-center">
-      Cadastrar novo Hábito
-    </h1>
-
-    <section class="habit-shadow-lg bg-white max-w-[600px] mx-auto p-10 pb-6 mt-4">
+  <main class="py-10 px-4">
+    {{-- CARD --}}
+    <x-card
+      title="Cadastrar Hábito"
+      resume="Cadastre um novo hábito abaixo."
+    >
       <form action="{{ route('habits.store') }}" method="POST" class="flex flex-col">
         @csrf
 
@@ -19,9 +19,9 @@
             class="bg-white habit-shadow p-2 @error('name') border-red-500 @enderror"
           >
           @error('name')
-            <p class="text-red-500 text-sm">
-              {{ $message }}
-            </p>
+          <p class="text-red-500 text-sm">
+            {{ $message }}
+          </p>
           @enderror
         </div>
 
@@ -32,6 +32,6 @@
           Cadastrar hábito
         </button>
       </form>
-    </section>
+    </x-card>
   </main>
 </x-layout>
