@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->setupViteMacros();
+        $this->createViteMacros();
         $this->configureUrls();
     }
 
@@ -32,9 +32,10 @@ class AppServiceProvider extends ServiceProvider
         }
     }
 
-    private function setupViteMacros(): void
+    private function createViteMacros(): void
     {
-        Vite::macro('image', fn (string $asset) => $this->asset("resources/img/{$asset}"));
-        Vite::macro('script', fn (string $asset) => $this->asset("resources/js/{$asset}"));
+        $vite = new Vite;
+        Vite::macro('image', fn (string $asset) => $vite->asset("resources/img/{$asset}"));
+        Vite::macro('script', fn (string $asset) => $vite->asset("resources/js/{$asset}"));
     }
 }
