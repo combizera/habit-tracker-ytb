@@ -1,3 +1,9 @@
+@props([
+  'title' => null,
+  'resume' => null,
+  'image' => null,
+])
+
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -7,7 +13,14 @@
       {{ config('app.name') }}
     </title>
 
-    <link rel="shortcut icon pre" href="/favicon.ico" type="image/x-icon">
+    {{-- SEO [Title/Description/Favicon/Canonical] --}}
+    <x-seo :$title :$resume />
+
+    {{-- OG Meta Tags --}}
+    <x-seo.og-tags :$title :$resume :$image />
+
+    {{-- Twitter Meta Tags --}}
+    <x-seo.twitter-tags :$title :$resume />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
