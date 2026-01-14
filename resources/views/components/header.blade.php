@@ -3,12 +3,17 @@
 
     {{-- LOGO --}}
     <div class="flex items-center gap-2 font-bold">
-      <a href="{{ route('habits.index') }}" class="habit-btn habit-shadow-lg px-2 py-1 bg-habit-orange">
-        HT
+      <a
+        href="{{ auth()->check() ? route('habits.index') : route('index') }}"
+        class="flex items-center gap-3"
+      >
+        <div class="habit-btn habit-shadow-lg px-2 py-1 bg-habit-orange">
+          HT
+        </div>
+        <p class="select-none">
+          Habit Tracker
+        </p>
       </a>
-      <p>
-        Habit Tracker
-      </p>
     </div>
 
     {{-- NAV --}}
@@ -40,7 +45,12 @@
       @endguest
 
       {{-- GITHUB --}}
-      <a class="habit-btn habit-shadow-lg p-[5px]" href="https://github.com/combizera/habit-tracker-ytb">
+      <a
+        class="habit-btn habit-shadow-lg p-[5px]"
+        href="{{ config('app.repository') }}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <x-icons.github />
       </a>
     </div>
