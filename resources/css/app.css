@@ -84,3 +84,7 @@ input[type=checkbox] {
 input[type=checkbox]:focus {
   @apply outline-none ring-habit-orange;
 }
+
+#btn-social .github-icon path {
+    fill: #fff;
+}
