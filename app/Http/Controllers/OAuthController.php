@@ -19,13 +19,12 @@ class OAuthController extends Controller
 
     public function callback(string $provider): RedirectResponse
     {
-        $githubUser = Socialite::driver($provider)->user();
+        $providerUser = Socialite::driver($provider)->user();
 
         $user = User::query()->updateOrCreate([
-            'auth_id' => $githubUser->id,
+            'email'     => $providerUser->email,
         ], [
-            'name' => $githubUser->name,
-            'email' => $githubUser->email,
+            'name' => $providerUser->name,
             'password' => Str::password(32),
         ]);
 
