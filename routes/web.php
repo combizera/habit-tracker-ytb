@@ -17,8 +17,8 @@ Route::middleware('guest')->group(function () {
 });
 
 // OAUTH
-Route::get('/auth/redirect',[OAuthController::class, 'redirect'])->name('oauth.redirect');
-Route::get('/auth/callback', [OAuthController::class, 'callback'])->name('oauth.callback');
+Route::get('/auth/{provider}/redirect',[OAuthController::class, 'redirect'])->name('oauth.redirect');
+Route::get('/auth/{provider}/callback', [OAuthController::class, 'callback'])->name('oauth.callback');
 
 // AUTH
 Route::middleware('auth')->group(function () {

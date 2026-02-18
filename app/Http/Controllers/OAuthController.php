@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Laravel\Socialite\Socialite;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -12,15 +11,15 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 class OAuthController extends Controller
 {
 
-    public function redirect(): RedirectResponse
+    public function redirect(string $provider): RedirectResponse
     {
-        return Socialite::driver('github')
+        return Socialite::driver($provider)
             ->redirect();
     }
 
-    public function callback(): RedirectResponse
+    public function callback(string $provider): RedirectResponse
     {
-        $githubUser = Socialite::driver('github')->user();
+        $githubUser = Socialite::driver($provider)->user();
 
         $user = User::query()->updateOrCreate([
             'auth_id' => $githubUser->id,
