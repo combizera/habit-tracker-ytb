@@ -68,9 +68,16 @@
         
         <a
           class="p-2 bg-habit-orange habit-shadow-lg habit-btn"
-          href="{{ route('oauth.redirect') }}"
+          href="{{ route('oauth.redirect', 'github') }}"
         >
           github
+        </a>
+        
+        <a
+          class="p-2 bg-habit-orange habit-shadow-lg habit-btn"
+          href="{{ route('oauth.redirect', 'google') }}"
+        >
+          google
         </a>
       </form>
 
