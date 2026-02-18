@@ -5,6 +5,9 @@
       title="Registre-se"
       resume="Crie sua conta para começar a organizar seus hábitos"
     >
+      {{-- SOCIAL --}}
+      <x-social-login />
+
       <form action="{{ route('auth.register') }}" method="POST" class="flex flex-col gap-4">
         @csrf
         <div class="flex flex-col-reverse gap-2">
