@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'auth_id',
     ];
 
     /**
@@ -45,13 +46,11 @@ class User extends Authenticatable
         ];
     }
 
-    // Um usuário pode ter muitos hábitos
     public function habits(): HasMany
     {
         return $this->hasMany(Habit::class);
     }
 
-    // Um usuário pode ter muitos registros
     public function habitLogs(): HasMany
     {
         return $this->hasMany(HabitLog::class);

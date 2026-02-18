@@ -1,0 +1,34 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Socialite;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+class OAuthController extends Controller
+{
+
+    public function redirect(): RedirectResponse
+    {
+        return Socialite::driver('github')
+            ->redirect();
+    }
+
+    public function callback(): RedirectResponse
+    {
+        $githubUser = Socialite::driver('github')->user();
+
+        $user = User::query()->updateOrCreate([
+            'auth_id' => $githubUser->id,
+        ], [
+            'name' => $githubUser->name,
+            'email' => $githubUser->email,
+        ]);
+
+        Auth::login($user);
+
+        return redirect(route('habits.index'));
+    }
+}

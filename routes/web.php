@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HabitController;
-use App\Http\Controllers\RegisterController;
+    use App\Http\Controllers\OAuthController;
+    use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,10 @@ Route::middleware('guest')->group(function () {
     Route::get('/cadastro', [RegisterController::class, 'index'])->name('register');
     Route::post('/cadastro', [RegisterController::class, 'store'])->name('auth.register');
 });
+
+// OAUTH
+Route::get('/auth/redirect',[OAuthController::class, 'redirect'])->name('oauth.redirect');
+Route::get('/auth/callback', [OAuthController::class, 'callback'])->name('oauth.callback');
 
 // AUTH
 Route::middleware('auth')->group(function () {

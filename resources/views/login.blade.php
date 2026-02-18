@@ -65,6 +65,13 @@
         >
           Entrar
         </button>
+        
+        <a
+          class="p-2 bg-habit-orange habit-shadow-lg habit-btn"
+          href="{{ route('oauth.redirect') }}"
+        >
+          github
+        </a>
       </form>
 
       <p class="text-center">
