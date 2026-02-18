@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Laravel\Socialite\Socialite;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
@@ -25,6 +27,7 @@ class OAuthController extends Controller
         ], [
             'name' => $githubUser->name,
             'email' => $githubUser->email,
+            'password' => Str::password(32),
         ]);
 
         Auth::login($user);
